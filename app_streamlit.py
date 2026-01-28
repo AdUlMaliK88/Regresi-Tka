@@ -2,20 +2,20 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-# konfigurasi halaman
+
 st.set_page_config(
     page_title="Prediksi Nilai TKA",
     page_icon="📘"
 )
 
-# load model
+
 model = joblib.load("model.joblib")
 
 # judul & deskripsi
 st.title("📘 Prediksi Nilai TKA")
 st.markdown("Aplikasi machine learning **regression** untuk memprediksi Nilai TKA siswa")
 
-# input user
+
 jam_belajar = st.slider("Jam Belajar per Hari", 0.0, 10.0, 4.0)
 kehadiran = st.slider("Persen Kehadiran (%)", 0.0, 100.0, 80.0)
 bimbel = st.pills("Mengikuti Bimbel?", ["ya", "tidak"], default="tidak")
@@ -33,4 +33,4 @@ if st.button("Prediksi Nilai TKA", type="primary"):
     st.balloons()
 
 st.divider()
-st.caption("Dibuat dengan 📘 oleh *RPL ❤*")
+st.caption("Dibuat dengan 📘 oleh Muhammad Abdul Malik ❤*")
